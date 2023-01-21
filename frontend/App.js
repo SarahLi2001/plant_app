@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
 import React, { Component } from 'react'
+import {Map, GoogleApiWrapper} from 'google-maps-react'
 
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
@@ -59,7 +60,7 @@ import CommentScreen from './components/main/Comment'
 // screens where each new app is placed on top of a stack
 const Stack = createStackNavigator();
 
-export class App extends Component {
+export class App extends Component {  
   constructor(props){
     super(props);
     this.state = {
@@ -107,7 +108,20 @@ export class App extends Component {
     }
 
     return (
+      
       <Provider store={store}>
+        <Map 
+        google = {this.props.google}
+        style = {{width: "100%", height: "100%"}}
+        zoom = {10}
+        initialCenter = {
+          {
+            lat:49.282730,
+            lng:-123.120735
+          }
+        }
+        />
+        
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Main">
             <Stack.Screen name= "Main" component={MainScreen}/>
@@ -124,5 +138,14 @@ export class App extends Component {
   }
 }
 
-export default App
+//export default App
+// export GoogleApiWrapper( {
+//   apiKey:"AIzaSyDP-8Ta77A2zKgtQhWJDmTg04Kma3IW_iw"
+// })
 
+// export {
+//   App
+// }
+export default GoogleApiWrapper( {
+  apiKey:"AIzaSyDP-8Ta77A2zKgtQhWJDmTg04Kma3IW_iw"
+}) (App) 
