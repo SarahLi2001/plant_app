@@ -1,0 +1,19 @@
+{
+  "name": "petgram",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SarahLi2001/petgram.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SarahLi2001/petgram/issues"
+  },
+  "homepage": "https://github.com/SarahLi2001/petgram#readme"
+}
